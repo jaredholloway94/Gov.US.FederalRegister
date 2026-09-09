@@ -41,7 +41,7 @@ function DocumentFieldCompleter
 }
 
 
-function AgencyCompleterCompleter
+function AgencyCompleter
 {
     param
     (
@@ -63,6 +63,39 @@ function AgencyCompleterCompleter
     
     $completer_args = @{
         CompletionsList = $AgencyEnum
+        CommandName = $CommandName
+        ParameterName = $ParameterName
+        WordToComplete = $WordToComplete
+        CommandAst = $CommandAst
+        FakeBoundParameters = $FakeBoundParameters
+    }
+
+    ArrayCompleter @completer_args
+}
+
+
+function PublicInspectionDocumentFieldCompleter
+{
+    param
+    (
+        [string]
+        $CommandName,
+
+        [string]
+        $ParameterName,
+
+        [string]
+        $WordToComplete,
+
+        [System.Management.Automation.Language.CommandAst]
+        $CommandAst,
+
+        [System.Collections.IDictionary]
+        $FakeBoundParameters
+    )
+
+    $completer_args = @{
+        CompletionsList = $PublicInspectionDocumentFieldEnum
         CommandName = $CommandName
         ParameterName = $ParameterName
         WordToComplete = $WordToComplete

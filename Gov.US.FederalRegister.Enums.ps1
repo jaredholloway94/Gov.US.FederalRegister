@@ -1735,4 +1735,27 @@ $CfrTopicEnum = @(
     "youth_organizations"
 )
 
+$PublicInspectionDocumentFieldEnum = @(
+    "agencies",
+    "agency_names",
+    "docket_id",
+    "docket_ids",
+    "document_number",
+    "editorial_note",
+    "excerpts",
+    "filed_at",
+    "filing_type",
+    "html_url",
+    "json_url",
+    "pdf_url",
+    "pdf_updated_at",
+    "publication_date",
+    "raw_text_url",
+    "subtype",
+    "title",
+    "toc_doc",
+    "toc_subject",
+    "type"
+)
+
 #endregion  Enums >

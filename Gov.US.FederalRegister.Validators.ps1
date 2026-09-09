@@ -62,6 +62,34 @@ function AgencyValidator
 }
 
 
+function PublicInspectionDocumentFieldValidator
+{
+    <#
+        .SYNOPSIS
+        - can be empty (default fields will be retrieved)
+        - can be single field name
+        - can be multiple field names separated by commas
+    #>
+
+    if ($_ -eq "")
+    { # default document fields
+        $true
+    }
+    elseif ($_ -eq "all")
+    { # all document fields
+        $true
+    }
+    elseif ($_ -like "*,*")
+    { # multiple document fields
+        foreach ($i in $_.Split(",")) {$i -in $PublicInspectionDocumentFieldEnum}
+    }
+    else
+    { # one document field
+        $_ -in $PublicInspectionDocumentFieldEnum
+    }
+}
+
+
 function CfrTopicValidator
 {
     <#
